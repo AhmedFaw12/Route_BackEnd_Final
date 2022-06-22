@@ -1,0 +1,75 @@
+body{
+    font-family:"Titillium Web", sans-serif;
+}
+
+body,#loginBox,.inputBox,#loginBtn, #signUpBtn,nav{
+    background-color: #24353f;
+}
+
+
+#loginBox{
+    
+
+    box-shadow: -5px 2px 54px -9px rgb(0,0,0);
+    color:#fff;
+}
+
+
+input.inputBox::placeholder{
+    color: #ccc;
+}   
+
+
+input.inputBox:focus , input.inputBox:not(:focus){
+    background-color: #24353f;
+    color: white;
+}
+
+#loginBox h1, #loginBox button{
+    color: #17a2b8;
+}
+
+label{
+    color: #17a2b8;
+}
+
+
+#loginBtn:hover, #signUpBtn:hover{
+   background-color: #17a2b8;
+   color: white;
+}
+
+
+
+#signUpLink:hover , #signInLink:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+nav{
+    box-shadow: -5px 2px 54px -9px rgb(0,0,0);
+}
+
+nav #logoutBtn{
+    border: 1px solid #ffc107;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: #ccc;
+}
+
+nav #logoutBtn:hover{
+    background-color: #ffc107;
+    color: antiquewhite;
+}
+
+#welcomeUser div{
+    background-color: #24353f;
+    box-shadow: -5px 2px 54px -9px rgb(0,0,0);
+    border-radius: 5px;
+}
+
+
+img.setWidth{
+    width: 100px;
+}
