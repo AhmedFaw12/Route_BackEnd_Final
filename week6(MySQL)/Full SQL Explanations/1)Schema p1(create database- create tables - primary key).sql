@@ -33,9 +33,8 @@ Create table:
                     example: decimal(10,2)
                         -means we can have max 10 digits (2 of 10 are fraction)
                         -8 max before decimal point(.) , 2 after decimal point(.)
-                        -since it is not unsigned , there is a digit for the sign 
-                        -1234.22
-                        -max number to be stored : +9999999.99
+                        -max number to be stored : +99999999.99
+                        -min number to be stored : -99999999.99
                 BOOLEAN (not main datatype, it is 1digit integer)
                 VARCHAR (limited string that can have max characters 255)
                 TEXT    (very big limit string)
@@ -90,7 +89,33 @@ Keys:
         -it is a column in table where each record is unique and never changes
         -primary key is made auto increment
 
-        -primary ket can be composite(mix of multiple columns)
+        -primary key can be composite(mix of multiple columns)
+
+
+    -Composite Primary key:
+        A Composite Primary Key (CPK) is a key that uses 2 or more columns to uniquely identify each row in a table. They are typically seen in Associative Entity tables, or Weak Entity tables. I will explain each.
+
+        -Associative Entity Tables(pivot table) (Many-to-Many Relationships): An Associative Entity table is simply a table that is used for a many-to-many relationship between 2 or more other tables.
+            Example:
+                -products table(id, name, desc, price, piecesNo, img, cat_id, created_at)
+                -orders table(id, name of user(name), email, phone, address, status, created_at)
+
+                -order can contain many products
+                -one product can be ordered in many orders
+                -(many-many)
+                
+                -so we need pivot table that contain 2foreign keys (order_id, product_id)
+
+                -order_details(order_id(fk), product_id(fk), qty)
+                -we we can make primary key composite(order_id and product_id)
+
+                Code :
+                    PRIMARY KEY(order_id, product_id)
+        
+        -Weak Entity Tables (Multivalued Attributes): A Weak Entity table is a table that exists because another table exists, and it needs to be used to store a Multivalued Attribute of that entity. The essence of a Multivalued Attribute is that you don’t know how many values of the attribute each row in the parent table will have. Examples of Multivalued Attributes include customer email addresses, customer phone numbers, the quantity of order lines each order will have, and how many clicks a website visit will have.
+
+            Suppose a business wants to store as many email addresses as the customer provides. An inexperienced database architect may simply start appending columns called Email1, Email2, Email3, Email4, Email5 (and on and on) to the Customers table. This violates first normal form, and this junior architect needs to have his DDL permissions revoked because each subsequent column will be more and more sparse, leading to incredibly inefficient data storage. To correctly implement this Multivalued Attribute, you would want to create a CustomerEmails table, with a Composite Primary Key consisting of CustomerID and EmailNumber, where EmailNumber is simply an auto-increment counter column within each group of recurring CustomerID values.
+
 
     -Foreign Key: 
         -it is a column in our table to points to  another table
