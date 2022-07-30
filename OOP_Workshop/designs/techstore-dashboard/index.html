@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techstore | Dashboard</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">TechStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Orders</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Admins</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto mr-5">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Your name
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-header">Products</div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between align-items-center">
+                            <h5>233</h5>
+                          <a href="#" class="btn btn-light">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-header">Categories</div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between align-items-center">
+                            <h5>5</h5>
+                          <a href="#" class="btn btn-light">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-header">Orders</div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between align-items-center">
+                            <h5>1120</h5>
+                          <a href="#" class="btn btn-light">Show</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
