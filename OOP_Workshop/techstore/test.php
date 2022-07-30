@@ -1,8 +1,10 @@
 <?php
+
+
 /*
 
 */
-
+require_once("app.php");
 // require_once("classes/Request.php");
 // require_once("classes/Session.php");
 // require_once("classes/Db.php");
@@ -102,6 +104,26 @@
 
 
 //testing app.php:
-require_once("app.php");
+//require_once("app.php");
+// echo $request->get("name");
 
-echo $request->get("name");
+
+/******************************************************************************************/
+//testing Admin.php (login method)
+use TechStore\Classes\Models\Admin;
+$ad = new Admin;
+$res = $ad->login("ahmed@admin.com ", '123456789', $session);
+
+
+
+echo"<pre>";
+var_dump($res);
+print_r($_SESSION);
+echo"</pre>";
+
+$ad->logout($session);
+
+echo"<pre>";
+print_r($_SESSION);
+echo"</pre>";
+

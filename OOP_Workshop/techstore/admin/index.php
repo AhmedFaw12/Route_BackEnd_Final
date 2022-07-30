@@ -3,7 +3,6 @@
 
     <div class="container py-5">
         <div class="row">
-
             <div class="col-md-4">
                 <div class="card text-white bg-info mb-3">
                     <div class="card-header">Products</div>
@@ -15,7 +14,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card text-white bg-danger mb-3">
                     <div class="card-header">Categories</div>

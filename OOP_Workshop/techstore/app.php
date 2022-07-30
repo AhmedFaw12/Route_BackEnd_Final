@@ -4,6 +4,9 @@
 define("PATH", __DIR__."/");
 define("URL", "http://localhost/OOP_Workshop/techstore/");
 
+define("APATH", __DIR__."/admin/");
+define("AURL", "http://localhost/OOP_Workshop/techstore/admin/");
+
 //db credentials
 define("DB_SERVERNAME", "localhost");
 define("DB_USERNAME", "root");

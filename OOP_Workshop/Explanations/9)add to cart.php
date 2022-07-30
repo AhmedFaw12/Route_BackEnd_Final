@@ -54,24 +54,45 @@ Add To Cart:
 
                 public function count(){
                     $count = 0;
-                    foreach($_SESSION["cart"] as $prodData){
-                        $count += $prodData["qty"];
+                    if(isset($_SESSION["cart"])){
+                        foreach($_SESSION["cart"] as $id=> $prodData){
+                            $count += $prodData["qty"];
+                        }
+                        // return count($_SESSION['cart']);
                     }
-                    // return count($_SESSION['cart']);
                     return $count;   
                 }
 
                 public function total(){
                     $total = 0;
-                    foreach($_SESSION["cart"] as $prodData){
-                        $total += $prodData["qty"] * $prodData["price"];
+                    if (isset($_SESSION["cart"])) {
+                        foreach($_SESSION["cart"] as $id => $prodData){
+                            $total += $prodData["qty"] * $prodData["price"];
+                        }
                     }
-
                     return $total;
                 }
 
                 public function has(string $id) : bool{
-                    return array_key_exists($id, $_SESSION["cart"]);
+                    if(isset($_SESSION["cart"])){
+                        return array_key_exists($id, $_SESSION["cart"]);
+                    }
+                    return false;
+                }
+
+                public function all(){
+                    if(isset($_SESSION["cart"]))
+                        return $_SESSION["cart"];
+                    
+                    return [];
+                }
+
+                public function remove($id){
+                    unset($_SESSION["cart"][$id]);
+                }
+
+                public function empty(){
+                    $_SESSION["cart"] = [];
                 }
             }
             ?>
@@ -102,6 +123,14 @@ Add To Cart:
                 -also to hide submit button when user try to add product again to the cart
                 -we used array_key_exists($key, $array):
                     -check if given key exists in array
+
+
+            -NOTES:
+                -when we close browser , session ends,
+                -but in methods (count , total, has, all) ,we use the $_SESSION["cart"] array
+                and there is not cart , so it will give error
+                -so we must check if "cart" key exists in  SESSION or not using isset():
+                    if(isset($_SESSION["cart"]))  
         ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         classes/Request.php:
             public function redirect($path){

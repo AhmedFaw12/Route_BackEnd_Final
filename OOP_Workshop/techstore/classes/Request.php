@@ -30,4 +30,8 @@ class Request
     public function redirect($path){
         header("location: ". URL .$path);
     }
+
+    public function aredirect($path){
+        header("location: ". AURL .$path);
+    }
 }

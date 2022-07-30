@@ -1,7 +1,6 @@
 <?php include("inc/header.php")?>
 
 	<!-- Cart -->
-
 	<div class="cart_section">
 		<div class="container">
 			<div class="row">

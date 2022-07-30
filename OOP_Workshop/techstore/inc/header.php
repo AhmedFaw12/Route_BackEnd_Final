@@ -9,7 +9,9 @@ use TechStore\Classes\Models\Cat;
     $cats = $c->selectAll("id, name"); 
 
     $cart = new Cart;
+    // $cart->count();
     $cartCount = $cart->count();
+    // echo $cartCount;
     $cartTotal = $cart->total();
 ?>
 
@@ -102,7 +104,7 @@ use TechStore\Classes\Models\Cat;
                                         </div>
                                         <div class="cart_content">
                                             <div class="cart_text"><a href="<?=URL;?>cart.php">Cart</a></div>
-                                            <div class="cart_price">$<?= $cartTotal ?></div>
+                                            <div class="cart_price">$<?=$cartTotal ?></div>
                                         </div>
                                     </div>
                                 </div>
