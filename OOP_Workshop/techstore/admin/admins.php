@@ -1,3 +1,4 @@
+<?php $active ="admins"?>
 <?php  require_once("inc/header.php");?>
 
     <div class="container-fluid py-5">
@@ -21,8 +22,8 @@
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Kareem Fouad</td>
-                        <td>kareem@techstore.com</td>
+                        <td>Ahmed Fawzy</td>
+                        <td>Ahmed@techstore.com</td>
                         <td>
                             <a class="btn btn-sm btn-info" href="#">
                                 <i class="fas fa-edit"></i>

@@ -12,6 +12,10 @@ class Request
     {
         return $_POST[$key];
     }
+    public function files(string $key)
+    {
+        return $_FILES[$key];
+    }
 
     public function getHas(string $key) : bool
     {

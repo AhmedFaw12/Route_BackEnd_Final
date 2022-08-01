@@ -1,4 +1,14 @@
+<?php $active ="orders"?>
 <?php  require_once("inc/header.php");?>
+
+<?php  
+use TechStore\Classes\Models\Order;
+
+$ord = new Order;
+$orders = $ord->selectAll("orders.id, orders.name, orders.phone, orders.status, orders.created_at, SUM(qty*price) AS total");
+
+?>
+
     <div class="container-fluid py-5">
         <div class="row">
 
@@ -21,19 +31,22 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Kareem Fouad</td>
-                        <td>01012345678</td>
-                        <td>$15000</td>
-                        <td>2020-10-11</td>
-                        <td>pending</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="#">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                        </td>
-                      </tr>
+                      <?php foreach($orders as $index=>$order): ?>
+                      
+                        <tr>
+                          <th scope="row"><?= $index+1 ?></th>
+                          <td><?= $order["name"] ?></td>
+                          <td><?= $order["phone"] ?></td>
+                          <td>$<?= $order["total"] ?></td>
+                          <td><?= date("d M,Y  h:i a", strtotime($order["created_at"]))   ?></td>
+                          <td><?= $order["status"] ?></td>
+                          <td>
+                              <a class="btn btn-sm btn-primary" href="<?=AURL . "order.php?id=" .$order["id"]?>">
+                                  <i class="fas fa-eye"></i>
+                              </a>
+                          </td>
+                        </tr>
+                      <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

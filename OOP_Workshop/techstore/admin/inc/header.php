@@ -21,23 +21,23 @@ if(!$session->has("adminId")){
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="<?=URL;?>">TechStore</a>
+        <a class="navbar-brand" href="<?=AURL;?>">TechStore</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Products</a>
+                <li class="nav-item <?php if($active === "products") echo "active"?>">
+                  <a class="nav-link" href="<?=AURL;?>products.php">Products</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Categories</a>
+                <li class="nav-item <?php if($active === "categories") echo "active"?>">
+                  <a class="nav-link" href="<?=AURL;?>categories.php">Categories</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Orders</a>
+                <li class="nav-item <?php if($active === "orders") echo "active"?>">
+                  <a class="nav-link" href="<?=AURL;?>orders.php?active=orders">Orders</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Admins</a>
+                <li class="nav-item <?php if($active === "admins") echo "active"?>">
+                  <a class="nav-link" href="<?=AURL;?>admins.php">Admins</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto mr-5">

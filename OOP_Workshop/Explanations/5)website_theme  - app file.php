@@ -57,6 +57,7 @@ App file:
 
 
             -we will use path in includes (include, include_one, require, require_once)
+            -we also use path when we upload file or image
 
         URL:
             define("URL", "http://localhost/OOP_Workshop/techstore/");

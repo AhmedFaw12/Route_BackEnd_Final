@@ -34,7 +34,7 @@ abstract class Db{
         $sql = "SELECT $fields FROM $this->table 
         WHERE $conds";
 
-        $result = mysqli_query($this->conn, $sql);
+         $result = mysqli_query($this->conn, $sql);
 
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
